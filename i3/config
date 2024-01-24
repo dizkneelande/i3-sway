@@ -12,9 +12,9 @@ font pango:Jetbrains Mono 10
 #exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec_always --no-startup-id nm-applet
 exec --no-startup-id /usr/lib/xfce-polkit/xfce-polkit
-exec_always --no-startup-id xrandr --output DP-2-2 --auto
-exec_always --no-startup-id xrandr --output DP-2-3 --auto
-exec_always --no-startup-id xrandr --output eDP-1 --auto --right-of DP-2-3
+#exec_always --no-startup-id xrandr --output DP-2-2 --auto
+#exec_always --no-startup-id xrandr --output DP-2-3 --auto
+#exec_always --no-startup-id xrandr --output eDP-1 --auto --right-of DP-2-3
 exec_always --no-startup-id feh --bg-scale ~/Pictures/Tropical-sunset.png
 exec_always --no-startup-id dunst
 exec_always --no-startup-id caffeine

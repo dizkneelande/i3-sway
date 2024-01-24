@@ -8,9 +8,9 @@ set $mod Mod4
 font pango:Jetbrains Mono 10
 
 ## -- startup ---- ##
-output DP-4 resolution 1920x1080 position 0,0
-output DP-5 resolution 1920x1080 position 1920,0
-output eDP-1 resolution 1920x1080 position 3840,0
+#output DP-4 resolution 1920x1080 position 0,0
+#output DP-5 resolution 1920x1080 position 1920,0
+#output eDP-1 resolution 1920x1080 position 3840,0
 output * bg ~/Pictures/Tropical-sunset.png fill
 exec_always dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 exec --no-startup-id nm-applet --indicator
@@ -19,7 +19,7 @@ exec /usr/lib/xfce-polkit/xfce-polkit
 #exec_always --no-startup-id xrandr --output DP-2-3 --auto
 #exec_always --no-startup-id xrandr --output eDP-1 --auto --right-of DP-2-3
 exec dunst
-exec_always picom
+#exec_always picom
 exec_always autotiling
 exec_always gammastep -O 3500
 exec_always blueman-applet

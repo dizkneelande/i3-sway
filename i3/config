@@ -15,20 +15,20 @@ exec --no-startup-id /usr/lib/xfce-polkit/xfce-polkit
 #exec_always --no-startup-id xrandr --output DP-2-2 --auto
 #exec_always --no-startup-id xrandr --output DP-2-3 --auto
 #exec_always --no-startup-id xrandr --output eDP-1 --auto --right-of DP-2-3
-exec_always --no-startup-id feh --bg-scale ~/Pictures/Tropical-sunset.png
+exec_always --no-startup-id feh --bg-scale ~/Pictures/gruvbox-wallpapers/irl/camera.jpg
 exec_always --no-startup-id dunst
 exec_always --no-startup-id caffeine
 exec_always --no-startup-id picom
 exec_always --no-startup-id autotiling
-exec_always --no-startup-id redshift -P -O 3500
+exec_always --no-startup-id redshift -P -O 3000
 exec_always --no-startup-id blueman-applet
 
 ## -- disable caps lock ---- ##
 exec_always --no-startup-id setxkbmap -option ctrl:nocaps
-exec_always --no-startup-id xinput disable 10
+#exec_always --no-startup-id xinput disable 10
 
 ## -- clamshell ---- ##
-exec_always /home/nell/.config/i3/scripts/clamshell.sh
+#exec_always /home/nell/.config/i3/scripts/clamshell.sh
 
 ## -- brightness and audio ---- ## 
 bindsym XF86MonBrightnessUp exec brightnessctl set +5%
@@ -45,7 +45,7 @@ floating_modifier $mod
 
 ## -- keybindings ---- ##
 bindsym $mod+Return exec xfce4-terminal 
-bindsym $mod+Shift+w exec brave 
+bindsym $mod+Shift+w exec firefox 
 bindsym $mod+Shift+f exec thunar
 
 ## -- screenshot ---- ##

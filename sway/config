@@ -11,7 +11,7 @@ font pango:Jetbrains Mono 10
 #output DP-4 resolution 1920x1080 position 0,0
 #output DP-5 resolution 1920x1080 position 1920,0
 #output eDP-1 resolution 1920x1080 position 3840,0
-output * bg ~/Pictures/Tropical-sunset.png fill
+output * bg ~/Pictures/gruvbox-wallpapers/irl/camera.jpg
 exec_always dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 exec --no-startup-id nm-applet --indicator
 exec /usr/lib/xfce-polkit/xfce-polkit
@@ -21,7 +21,7 @@ exec /usr/lib/xfce-polkit/xfce-polkit
 exec dunst
 #exec_always picom
 exec_always autotiling
-exec_always gammastep -O 3500
+exec_always gammastep -O 3000
 exec_always blueman-applet
 
 ## -- disable caps lock ---- ##
@@ -40,7 +40,7 @@ input type:touchpad {
 
 #bindswitch --reload --locked lid:on output eDP-1 disable 
 #bindswitch --reload --locked lid:off output eDP-1 enable
-exec_always /home/nell/.config/sway/scripts/clamshell.sh
+#exec_always /home/nell/.config/sway/scripts/clamshell.sh
 # manual toggle
 #bindsym $mod+o exec swaymsg output eDP-1 enable
 #bindsym $mod+Shift+o exec swaymsg output eDP-1 disable
@@ -60,7 +60,7 @@ floating_modifier $mod
 
 ## -- keybindings ---- ##
 bindsym $mod+Return exec xfce4-terminal 
-bindsym $mod+Shift+w exec brave 
+bindsym $mod+Shift+w exec firefox 
 bindsym $mod+Shift+f exec thunar
 
 ## -- screenshot ---- ##

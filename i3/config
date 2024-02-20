@@ -51,6 +51,7 @@ bindsym $mod+Shift+f exec thunar
 ## -- screenshot ---- ##
 bindsym --release $mod+p exec import $(xdg-user-dir PICTURES)/$(date +'screenshot_%Y-%m-%d-%H%M%S.png') 
 
+
 ## -- lofi girl ---- ##
 bindsym $mod+Shift+m exec mpv https://www.youtube.com/watch?v=SGnrcOz0SmY
 

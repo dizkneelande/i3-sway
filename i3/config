@@ -5,7 +5,7 @@
 set $mod Mod4
 
 ## -- font ---- ##
-font pango:Jetbrains Mono 10
+font pango:Cascadia Mono SemiBold 10
 
 ## -- startup ---- ##
 #exec --no-startup-id dex --autostart --environment i3
@@ -15,7 +15,7 @@ exec --no-startup-id /usr/lib/xfce-polkit/xfce-polkit
 #exec_always --no-startup-id xrandr --output DP-2-2 --auto
 #exec_always --no-startup-id xrandr --output DP-2-3 --auto
 #exec_always --no-startup-id xrandr --output eDP-1 --auto --right-of DP-2-3
-exec_always --no-startup-id feh --bg-scale ~/Pictures/gruvbox-wallpapers/irl/camera.jpg
+exec_always --no-startup-id feh --bg-scale /home/nell/Pictures/wallpapers/end4.png 
 exec_always --no-startup-id dunst
 exec_always --no-startup-id caffeine
 exec_always --no-startup-id picom
@@ -28,7 +28,7 @@ exec_always --no-startup-id setxkbmap -option ctrl:nocaps
 #exec_always --no-startup-id xinput disable 10
 
 ## -- clamshell ---- ##
-#exec_always /home/nell/.config/i3/scripts/clamshell.sh
+exec_always /home/nell/.config/i3/scripts/clamshell.sh
 
 ## -- brightness and audio ---- ## 
 bindsym XF86MonBrightnessUp exec brightnessctl set +5%
@@ -45,16 +45,16 @@ floating_modifier $mod
 
 ## -- keybindings ---- ##
 bindsym $mod+Return exec xfce4-terminal 
-bindsym $mod+Shift+w exec firefox 
+bindsym $mod+Shift+w exec brave 
 bindsym $mod+Shift+f exec thunar
 
 ## -- screenshot ---- ##
-bindsym --release $mod+p exec import $(xdg-user-dir PICTURES)/$(date +'screenshot_%Y-%m-%d-%H%M%S.png') 
+bindsym --release $mod+Print exec import $(xdg-user-dir PICTURES)/$(date +'screenshot_%Y-%m-%d-%H%M%S.png') 
 
 
 ## -- lofi girl ---- ##
-bindsym $mod+Shift+m exec mpv https://www.youtube.com/watch?v=SGnrcOz0SmY
-
+bindsym $mod+Shift+v exec mpv https://www.youtube.com/watch?v=gi4qf42Kpco
+ 
 ## -- scratchpad ---- ##
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
@@ -179,4 +179,19 @@ bar {
   	       }
 }
 
-bindsym $mod+d exec "dmenu_run -nf '#EBDBB2' -nb '#282828' -sb '#EBDBB2' -sf '#282828' -fn 'Jetbrains Mono-10' -p 'dmenu prompt &gt;'"
+bindsym $mod+d exec "dmenu_run -nf '#EBDBB2' -nb '#282828' -sb '#EBDBB2' -sf '#282828' -fn 'Cascadia Mono-10' -p 'dmenu prompt &gt;'"
+
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_role="Preferences"] floating enable
+for_window [window_role="dialog"] floating enable
+for_window [window_role="menu"] floating enable
+for_window [class="(?i)thunar"] floating enable 
+for_window [class="(?i)thunar"] resize set 900 600
+#for_window [class="(.*join\?action\=join.*|.*zoom.*)"] floating enable
+#for_window [class="(.*join\?action\=join.*|.*zoom.*)" title="Zoom - Licensed Account"] floating enable
+#for_window [class="(.*join\?action\=join.*|.*zoom.*)" title="Zoom - Free Account"] floating enable
+#for_window [class="(.*join\?action\=join.*|.*zoom.*)" title="Zoom Meeting"] floating enable 
+
+

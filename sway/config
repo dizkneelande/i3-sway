@@ -5,21 +5,17 @@
 set $mod Mod4
 
 ## -- font ---- ##
-font pango:Jetbrains Mono 10
+font pango:Cascadia Mono SemiBold 10
 
 ## -- startup ---- ##
 #output DP-4 resolution 1920x1080 position 0,0
 #output DP-5 resolution 1920x1080 position 1920,0
 #output eDP-1 resolution 1920x1080 position 3840,0
-output * bg ~/Pictures/gruvbox-wallpapers/irl/camera.jpg
+exec_always swaybg --output '*' --mode fill --image /home/nell/Pictures/wallpapers/end4.png
 exec_always dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 exec --no-startup-id nm-applet --indicator
 exec /usr/lib/xfce-polkit/xfce-polkit
-#exec_always --no-startup-id xrandr --output DP-2-2 --auto
-#exec_always --no-startup-id xrandr --output DP-2-3 --auto
-#exec_always --no-startup-id xrandr --output eDP-1 --auto --right-of DP-2-3
 exec dunst
-#exec_always picom
 exec_always autotiling
 exec_always gammastep -O 3000
 exec_always blueman-applet
@@ -37,10 +33,9 @@ input type:touchpad {
 }
 
 ## -- clamshell mode ---- ##
-
+exec_always /home/nell/.config/sway/scripts/clamshell.sh
 #bindswitch --reload --locked lid:on output eDP-1 disable 
 #bindswitch --reload --locked lid:off output eDP-1 enable
-#exec_always /home/nell/.config/sway/scripts/clamshell.sh
 # manual toggle
 #bindsym $mod+o exec swaymsg output eDP-1 enable
 #bindsym $mod+Shift+o exec swaymsg output eDP-1 disable
@@ -60,18 +55,18 @@ floating_modifier $mod
 
 ## -- keybindings ---- ##
 bindsym $mod+Return exec xfce4-terminal 
-bindsym $mod+Shift+w exec firefox 
+bindsym $mod+Shift+w exec brave --enable-features=UseOzonePlatform --ozone-platform=wayland 
 bindsym $mod+Shift+f exec thunar
 
 ## -- screenshot ---- ##
-bindsym $mod+p exec slurp | grim -g - $(xdg-user-dir PICTURES)/$(date +'screenshot_%Y-%m-%d-%H%M%S.png')
+bindsym Print exec slurp | grim -g - $(xdg-user-dir PICTURES)/$(date +'screenshot_%Y-%m-%d-%H%M%S.png')
 
 ## -- scratchpad ---- ##
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 ## -- study video ---- ##
-bindsym $mod+Shift+m exec mpv https://www.youtube.com/watch?v=iJpohLFFO6U
+bindsym $mod+Shift+v exec mpv https://www.youtube.com/watch?v=gi4qf42Kpco
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -193,7 +188,7 @@ bar {
   	       }
 }
 
-bindsym $mod+d exec "dmenu_run -nf '#EBDBB2' -nb '#282828' -sb '#EBDBB2' -sf '#282828' -fn 'Jetbrains Mono-10' -p 'dmenu prompt &gt;'"
+bindsym $mod+d exec "dmenu_run -nf '#EBDBB2' -nb '#282828' -sb '#EBDBB2' -sf '#282828' -fn 'Cascadia Mono-10' -p 'dmenu prompt &gt;'"
 
 ## -- window rules ---- ##
 
@@ -203,3 +198,5 @@ for_window [window_role="task_dialog"] floating enable
 for_window [window_role="Preferences"] floating enable
 for_window [window_type="dialog"] floating enable
 for_window [window_type="menu"] floating enable
+for_window [class="(?i)thunar"] floating enable
+for_window [class="(?i)thunar"] resize 900 600 

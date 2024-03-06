@@ -1,7 +1,5 @@
 
-
 ## -- nell's i3 config ---- ##
-
 
 ## -- modkey ---- ##
 set $mod Mod4
@@ -21,6 +19,7 @@ exec_always --no-startup-id feh --bg-scale /home/nell/Pictures/wallpapers/end4.p
 exec_always --no-startup-id dunst
 exec_always --no-startup-id caffeine
 exec_always --no-startup-id picom
+exec_always --no-startup-id dropbox
 exec_always --no-startup-id autotiling
 exec_always --no-startup-id redshift -P -O 3000
 exec_always --no-startup-id blueman-applet
@@ -49,13 +48,18 @@ floating_modifier $mod
 bindsym $mod+Return exec xfce4-terminal 
 bindsym $mod+Shift+w exec brave 
 bindsym $mod+Shift+f exec thunar
+bindsym $mod+Shift+g exec brave --app=https://gemini.google.com/app
+bindsym $mod+g exec brave --app=https://chat.openai.com/
+
 
 ## -- screenshot ---- ##
-bindsym --release $mod+Print exec import $(xdg-user-dir PICTURES)/$(date +'screenshot_%Y-%m-%d-%H%M%S.png') 
+## install maim xclip xdotool
+## see dev.to/dianjuar
+bindsym $mod+Print exec --no-startup-id maim --select $(xdg-user-dir PICTURES)/$(date +'screenshot_%Y-%m-%d-%H%M%S.png')
 
 
 ## -- lofi girl ---- ##
-bindsym $mod+Shift+v exec mpv https://www.youtube.com/watch?v=gi4qf42Kpco
+bindsym $mod+Shift+v exec mpv https://www.youtube.com/watch?v=VjG60t1Eb1w 
  
 ## -- scratchpad ---- ##
 bindsym $mod+Shift+minus move scratchpad

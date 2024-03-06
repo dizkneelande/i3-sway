@@ -59,7 +59,7 @@ bindsym $mod+Shift+w exec brave --enable-features=UseOzonePlatform --ozone-platf
 bindsym $mod+Shift+f exec thunar
 
 ## -- screenshot ---- ##
-bindsym Print exec slurp | grim -g - $(xdg-user-dir PICTURES)/$(date +'screenshot_%Y-%m-%d-%H%M%S.png')
+bindsym $mod+Print exec slurp | grim -g - $(xdg-user-dir PICTURES)/$(date +'screenshot_%Y-%m-%d-%H%M%S.png')
 
 ## -- scratchpad ---- ##
 bindsym $mod+Shift+minus move scratchpad

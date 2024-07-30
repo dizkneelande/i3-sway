@@ -44,10 +44,10 @@ set nobackup
 set scrolloff=10
 
 " Do not wrap lines. Allow long lines to extend as far as the line goes.
-"set nowrap
+set nowrap
 
 " Enable wrap
-set wrap
+"set wrap
 
 " Status bar
 set laststatus=2
